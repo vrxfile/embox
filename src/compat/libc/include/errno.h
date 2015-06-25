@@ -51,6 +51,7 @@
 #define ENOMSG           42    /* No message of desired type */
 
 #define ENAMETOOLONG     60    /* File name too long */
+#define ETIME            62    /* Stream ioctl() timeout */
 #define ENOTEMPTY        66    /* Directory not empty */
 #define EOVERFLOW        75    /* Value too large to be stored in data type. */
 #define EILSEQ           84    /* Illegal byte sequence */

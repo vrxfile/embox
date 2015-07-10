@@ -9,6 +9,8 @@
 #ifndef HAL_ARCH_H_
 #define HAL_ARCH_H_
 
+#include <compiler.h>
+
 typedef enum {
 	ARCH_SHUTDOWN_MODE_HALT,
 	ARCH_SHUTDOWN_MODE_REBOOT,
@@ -24,7 +26,6 @@ extern void arch_init(void);
 
 extern void arch_idle(void);
 
-extern void arch_shutdown(arch_shutdown_mode_t mode) __attribute__ ((noreturn));
-
+extern void arch_shutdown(arch_shutdown_mode_t mode) _NORETURN;
 
 #endif /* HAL_ARCH_H_ */

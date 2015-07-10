@@ -144,7 +144,6 @@ cppflags_fn = \
 	-D__EMBOX__ \
 	-D__unix \
 	-D"__impl_x(path)=<../path>" \
-	-imacros $(call $1,$(AUTOCONF_DIR))/config.lds.h \
 	-I$(call $1,$(INCUDE_INSTALL_DIR)) \
 	-I$(call $1,$(SRC_DIR))/include \
 	-I$(call $1,$(SRC_DIR))/arch/$(ARCH)/include \
@@ -155,7 +154,6 @@ cppflags_fn = \
 	-I$(call $1,$(SRC_DIR))/compat/linux/include \
 	-I$(call $1,$(SRC_DIR))/compat/posix/include \
 	-I$(call $1,$(SRC_DIR))/compat/libc/include \
-	-nostdinc \
 	-MMD -MP# -MT $@ -MF $(@:.o=.d)
 
 # Preprocessor flags

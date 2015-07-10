@@ -9,14 +9,11 @@
 #ifndef HAL_ARCH_H_
 #define HAL_ARCH_H_
 
-#include <asm/hal/arch.h>
-
 typedef enum {
 	ARCH_SHUTDOWN_MODE_HALT,
 	ARCH_SHUTDOWN_MODE_REBOOT,
 	ARCH_SHUTDOWN_MODE_ABORT,
 } arch_shutdown_mode_t;
-
 
 /**
  * Performs basic machine-dependent initialization.

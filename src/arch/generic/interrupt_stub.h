@@ -13,11 +13,13 @@
 
 #ifndef __ASSEMBLER__
 
+#include <compiler.h>
+
 typedef unsigned int __ipl_t;
 
-static inline void ipl_init(void) { }
-static inline __ipl_t ipl_save(void) { return 0; }
-static inline void ipl_restore(__ipl_t ipl) { }
+static _INLINE void ipl_init(void) { }
+static _INLINE __ipl_t ipl_save(void) { return 0; }
+static _INLINE void ipl_restore(__ipl_t ipl) { }
 
 #endif /* __ASSEMBLER__ */
 

@@ -19,5 +19,11 @@
 
 #endif /* __GNUC__ */
 
+#if defined(__STDC__) && defined(__STDC_VERSION__) && __STDC_VERSION__ > 199901L
+#define _INLINE inline
+#else
+#define _INLINE
+#endif
+
 #endif /* COMPILER_H_ */
 

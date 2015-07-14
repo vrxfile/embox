@@ -14,7 +14,8 @@
 
 #include <hal/vfork.h>
 #include <hal/ptrace.h>
-
+#include <compiler.h>
+ 
 static void *vfork_body_exit_stub(void *arg) {
 	_exit(*((int*) arg));
 }
@@ -25,7 +26,7 @@ static void *vfork_body_exit_stub(void *arg) {
  * Warning: If a thread that is not calling fork() holds a resource, that
  * resource is never released in the child task.
  */
-void __attribute__((noreturn)) vfork_body(struct pt_regs *ptregs) {
+void vfork_body(struct pt_regs *ptregs) _NORETURN {
 	struct task *child;
 	pid_t child_pid;
 	struct task_vfork *task_vfork;

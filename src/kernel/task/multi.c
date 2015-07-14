@@ -24,6 +24,7 @@
 
 #include <util/binalign.h>
 #include <util/err.h>
+#include <compiler.h>
 
 struct task_trampoline_arg {
 	void * (*run)(void *);
@@ -289,7 +290,7 @@ void task_start_exit(void) {
 	assert(critical_inside(CRITICAL_SCHED_LOCK));
 }
 
-void __attribute__((noreturn)) task_finish_exit(void) {
+void task_finish_exit(void) _NORETURN {
 
 	assert(critical_inside(CRITICAL_SCHED_LOCK));
 
@@ -303,7 +304,7 @@ void __attribute__((noreturn)) task_finish_exit(void) {
 }
 
 
-void __attribute__((noreturn)) task_exit(void *res) {
+void task_exit(void *res) _NORETURN {
 
 	task_start_exit();
 

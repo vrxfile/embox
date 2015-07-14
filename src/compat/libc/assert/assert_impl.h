@@ -1,4 +1,5 @@
 /**
+ *
  * @file
  * @brief Assertion points implementation.
  *
@@ -37,8 +38,7 @@ struct __assertion_point {
 extern "C" {
 #endif
 
-extern void __attribute__ ((noreturn)) __assertion_handle_failure(
-		const struct __assertion_point *point);
+extern void __assertion_handle_failure(const struct __assertion_point *point) _NORETURN;
 extern char __assertion_message_buff[];
 extern int sprintf(char *s, const char *format, ...);
 

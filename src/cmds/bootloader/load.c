@@ -43,8 +43,7 @@ inval:
 	return -EINVAL;
 }
 
-static __attribute__ ((noreturn))
-		void load_and_run(char *image_vma, char *image_lma, size_t image_len) {
+static void load_and_run(char *image_vma, char *image_lma, size_t image_len) _NORETURN {
 	unsigned int irq;
 	void (*callme)(void) __attribute__ ((noreturn));
 

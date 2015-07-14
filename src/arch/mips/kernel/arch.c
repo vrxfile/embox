@@ -8,6 +8,7 @@
  */
 
 #include <hal/arch.h>
+#include <compiler.h>
 
 extern void mips_exception_init(void);
 
@@ -18,6 +19,6 @@ void arch_idle(void) {
 
 }
 
-void __attribute__ ((noreturn)) arch_shutdown(arch_shutdown_mode_t mode) {
+void arch_shutdown(arch_shutdown_mode_t mode) _NORETURN {
 	while (1) {}
 }

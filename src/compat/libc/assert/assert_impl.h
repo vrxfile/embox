@@ -25,7 +25,7 @@
  *      unused.
  */
 # define __assert(condition, expr_str, ...) \
-	do { (void) condition; } while (0)
+	do { (void) (condition); } while (0)
 
 #else
 

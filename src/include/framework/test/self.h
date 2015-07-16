@@ -17,6 +17,7 @@
 #ifndef FRAMEWORK_TEST_SELF_H_
 #define FRAMEWORK_TEST_SELF_H_
 
+#include <embox/impl_x.h>
 #include __impl_x(framework/test/self_impl.h)
 
 #define EMBOX_TEST_SUITE(description) \

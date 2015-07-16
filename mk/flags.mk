@@ -143,7 +143,6 @@ cppflags_fn = \
 	-U__linux__ -Ulinux -U__linux \
 	-D__EMBOX__ \
 	-D__unix \
-	-D"__impl_x(path)=<../path>" \
 	-I$(call $1,$(INCUDE_INSTALL_DIR)) \
 	-I$(call $1,$(SRC_DIR))/include \
 	-I$(call $1,$(SRC_DIR))/arch/$(ARCH)/include \

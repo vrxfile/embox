@@ -14,6 +14,7 @@
 #include <sys/cdefs.h>
 
 __BEGIN_DECLS
+#include <compiler.h>
 
 static inline unsigned int cpu_get_id(void) {
 	return 0;

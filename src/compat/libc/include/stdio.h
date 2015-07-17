@@ -11,6 +11,7 @@
 #ifndef STDIO_H_
 #define STDIO_H_
 
+#include <compiler.h>
 /*va_list As described in <stdarg.h>. */
 #include <stdarg.h>
 #include <sys/types.h>

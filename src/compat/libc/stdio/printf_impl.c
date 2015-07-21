@@ -15,8 +15,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <util/math.h>
-#define min(a,b) ((a) > (b) ? (a) : (b))
+
+#define min(a,b) ((a) < (b) ? (a) : (b))
+#define max(a,b) ((a) > (b) ? (a) : (b))
 
 #include <framework/mod/options.h>
 

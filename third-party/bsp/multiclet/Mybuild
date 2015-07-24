@@ -1,0 +1,7 @@
+package third_party.bsp.multiclet
+
+@Build(stage=1,script="true")
+@BuildArtifactPath(cppflags="-I$(ROOT_DIR)/third-party/multiclet/include/")
+static module core {
+
+}

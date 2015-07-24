@@ -34,12 +34,12 @@
 
 #include <uart.h>
 
-static void mcp_putc(const struct diag *dev, char ch) {
+void mcp_putc(const struct diag *dev, char ch) {
 	//UART_SEND_BYTE(ch, UART0);
 	DM2UART(UART0, (int)&ch, 1);
 }
 
-static int mcp_init(const struct diag *dev) {
+int mcp_init(const struct diag *dev) {
 	UART_InitTypeDef UART_InitStructure;
     
 	UART_InitStructure.System_freq = 8000000;

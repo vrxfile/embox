@@ -15,7 +15,7 @@
 #include <compiler.h>
 //#include <util/math.h>
 
-#define min(a,b) ((a) > (b) ? (a) : (b))
+#define min(a,b) ((a) < (b) ? (a) : (b))
 
 /**
  * Control block for managing ring buffers.

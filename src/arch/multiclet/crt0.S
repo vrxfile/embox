@@ -171,7 +171,7 @@
   .alias sizeof.tsk.retval sizeof.long
   //psw_reset_val: .long
 
-.text
+.section .boot, "ax"
 
 __libc_main:
  wdt_off:
@@ -192,7 +192,7 @@ start:
     ;                 #start.stop
     ; #SP -- адрес возврата из программы;
     ; #BP -- за верхнюю границу DM.
-    jmp   main
+    jmp   kernel_start
     getl  sizeof.DM
     getl  0
     getl  start.stop

@@ -1,5 +1,5 @@
 /*
- * omapl138_int.c
+ * omapl138_intc.c
  *
  *  Created on: Aug 12, 2015
  *      Author: Rostislav Varzar

@@ -112,7 +112,6 @@ void interrupt_handle(void) {
 		irq_dispatch(irq);
 
 		ipl_disable();
-
 	}
 	irqctrl_enable(irq);
 	critical_leave(CRITICAL_IRQ_HANDLER);

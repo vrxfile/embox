@@ -68,8 +68,8 @@ module omap3_intc extends irqctrl_api {
 	source "omap3_intc.c", "omap3_intc.h"
 }
 
-module omapl138_intc extends irqctrl_api {
-	source "omapl138_intc.c", "omapl138_intc.h"
+module omapl138_aintc extends irqctrl_api {
+	source "omapl138_aintc.c", "omapl138_aintc.h"
 }
 
 module bpi_intc extends irqctrl_api {

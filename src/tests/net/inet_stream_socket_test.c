@@ -150,6 +150,8 @@ TEST_CASE("accept() returns first connected client") {
 	test_assert_equal(1, send(c, "a", 1, 0));
 	test_assert_equal(1, recv(a, buf, 2, 0));
 	test_assert_equal('a', buf[0]);
+
+	close(other_c);
 }
 
 TEST_CASE("getsockname() returns not unspecified address when"

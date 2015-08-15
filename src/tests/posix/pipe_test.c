@@ -63,7 +63,7 @@ TEST_CASE("reading big chunk from smalls should be successfull") {
 	}
 
 	ret = read(pipe_testfd[0], buf, 4);
-	test_assert(ret = 4);
+	test_assert(ret == 4);
 
 	test_assert_zero(strncmp(buf, "abcd", 4));
 }

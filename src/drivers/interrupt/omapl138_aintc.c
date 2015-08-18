@@ -56,15 +56,17 @@ EMBOX_UNIT_INIT(omapl138_aintc_init);
 void software_init_hook(void)
 {
 	printk("point init_hook\n");
-	REG_STORE(OMAPL138_AINTC_GER, AINTC_GLOBAL_ENABLE);
-
-	REG_STORE(OMAPL138_AINTC_HIER, (AINTC_FIQ_ENABLE | AINTC_IRQ_ENABLE));
 
 	for (unsigned int m = 0; m < __IRQCTRL_IRQS_TOTAL; ++m)
 	{
 		irqctrl_clear(m);
 		irqctrl_disable(m);
 	}
+
+	REG_STORE(OMAPL138_AINTC_GER, AINTC_GLOBAL_ENABLE);
+
+	REG_STORE(OMAPL138_AINTC_HIER, (AINTC_FIQ_ENABLE | AINTC_IRQ_ENABLE));
+
 
 	// To add default priority settings!
 }
@@ -80,31 +82,31 @@ static int omapl138_aintc_init(void)
  */
 void irqctrl_enable(unsigned int interrupt_nr)
 {
-	printk("point irq_en\n");
+	printk("point irq_en %d\n", interrupt_nr);
 	REG_STORE(OMAPL138_AINTC_ESR(interrupt_nr >> 5), 1 << (interrupt_nr & 0x1f));
 }
 
 void irqctrl_disable(unsigned int interrupt_nr)
 {
-	printk("point irq_dis\n");
+	printk("point irq_dis %d\n", interrupt_nr);
 	REG_STORE(OMAPL138_AINTC_ECR(interrupt_nr >> 5), 1 << (interrupt_nr & 0x1f));
 }
 
 void irqctrl_clear(unsigned int interrupt_nr)
 {
-	printk("point irq_clr\n");
+	printk("point irq_clr %d\n", interrupt_nr);
 	REG_STORE(OMAPL138_AINTC_SECR(interrupt_nr >> 5), 1 << (interrupt_nr & 0x1f));
 }
 
 void irqctrl_force(unsigned int interrupt_nr)
 {
-	printk("point irq_force\n");
+	printk("point irq_force %d\n", interrupt_nr);
 	REG_STORE(OMAPL138_AINTC_SRSR(interrupt_nr >> 5), 1 << (interrupt_nr & 0x1f));
 }
 
 int irqctrl_pending(unsigned int interrupt_nr)
 {
-	printk("point pending_irq\n");
+	printk("point pending_irq %d\n", interrupt_nr);
 	return REG_LOAD(OMAPL138_AINTC_SECR(interrupt_nr >> 5)) & 1 << (interrupt_nr & 0x1f);
 }
 
@@ -114,7 +116,7 @@ void interrupt_handle(void)
 	//unsigned int irq = REG_LOAD(OMAPL138_INTC_SIR_IRQ) & INTC_SIR_IRQ_ACTIVE_MASK;
 	unsigned int irq = REG_LOAD(OMAPL138_AINTC_GPIR) & AINTC_IRQ_ACTIVE_MASK;
 
-	printk("point 2\n");
+	printk("point 2 irq %d\n", irq);
 	assert(!critical_inside(CRITICAL_IRQ_LOCK));
 
 	printk("point 3\n");

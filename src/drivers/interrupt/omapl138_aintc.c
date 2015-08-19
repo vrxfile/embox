@@ -68,7 +68,7 @@ void software_init_hook(void)
 	REG_STORE(OMAPL138_AINTC_HIER, (AINTC_FIQ_ENABLE | AINTC_IRQ_ENABLE));
 
 
-	// To add default priority settings!
+	// To add default priority settings!!!
 }
 
 static int omapl138_aintc_init(void)
